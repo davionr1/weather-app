@@ -14,11 +14,6 @@
 | --- | --- |
 | React Redux | PostgresSQL |   
 
-## Task List
-- [ ] 
-- [ ]
-- [ ]
-
 ## API 
 [API Reference](https://www.visualcrossing.com/resources/documentation/weather-api/timeline-weather-api/)
 
