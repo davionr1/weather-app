@@ -2,23 +2,20 @@ CREATE DATABASE weather_app;
 
 CREATE TABLE weather(
     weather_id SERIAL PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    location_country varchar(255), 
-    location_city varchar(255),
-    location_state varchar(255),
     temperature_current smallint,
-    temperature_avg smallint,
     temperature_high smallint,
     temperature_low smallint,
-    precipitation_chance tinyint,
+    precipitation_chance varchar(255),
     precipitation_amount tinyint,
-    humidity tinyint,
+    humidity varchar(255),
     wind_speed smallint,
-    visibility tinyint,
+    visibility varchar(255),
     sun_rise datetime,
     sun_set datetime,
 );
 
-CREATE TABLE locations(      
+CREATE TABLE locations(  
+    city_id SERIAL PRIMARY KEY NOT NULL AUTO_INCREMENT,    
     city VARCHAR(120),  
     city_ascii VARCHAR(120),  
     city_alt VARCHAR(1000),  
@@ -37,8 +34,7 @@ CREATE TABLE locations(
     population_proper FLOAT,  
     ranking INT,  
     timezone VARCHAR(120), 
-    same_name VARCHAR(5),  
-    id VARCHAR(10)
+    same_name VARCHAR(5), 
 );
 
 LOAD DATA INFILE 'D:/MilestoneProjects/Project2/weather-app/server/data/worldcities.csv'
