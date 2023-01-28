@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "postgres",
-    "password": null,
+    "password": "Nosilla11!",
     "database": "weather_app",
     "host": "127.0.0.1",
     "dialect": "postgres"
@@ -22,4 +22,3 @@
   }
 }
 
-//npx sequelize-cli model:generate --name User --attributes 'Data'
