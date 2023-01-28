@@ -1,23 +1,24 @@
 {
   "development": {
     "username": "postgres",
-    "password": null,
-    "database": "database_development",
+    "password": "Nosilla11!",
+    "database": "weather_app",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgres"
   },
   "test": {
     "username": "postgres",
     "password": null,
-    "database": "database_test",
+    "database": "weather_app",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgres"
   },
   "production": {
     "username": "postgres",
     "password": null,
-    "database": "database_production",
+    "database": "weather_app",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgres"
   }
 }
+
