@@ -42,5 +42,3 @@ db.Sequelize = Sequelize;
 
 module.exports = db;
 
-//Generating Models Automatically
-// npx sequelize-cli model:generate --name 'modelName' --attributes 'Data'

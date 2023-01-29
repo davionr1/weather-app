@@ -4,35 +4,25 @@
 --How to run migrations:
 -- // npx sequelize-cli db:migrate
 --Undoing Migrations
--- // npx sequelize-cli db:migrate
+-- // npx sequelize-cli db:migrate:undo:all
 
+--Documentation Reference
+https://sequelize.org/docs/v6/
 
-CREATE TABLE locations(  
-    city_id SERIAL PRIMARY KEY NOT NULL AUTO_INCREMENT,    
-    city VARCHAR(120),  
-    city_ascii VARCHAR(120),  
-    city_alt VARCHAR(1000),  
+CREATE TABLE locations(    
+    city VARCHAR,  
+    city_ascii VARCHAR,    
     lat FLOAT,  
     lng FLOAT,  
-    country VARCHAR(120), 
-    iso2 VARCHAR(2),  
-    iso3 VARCHAR(3),  
-    admin_name VARCHAR(120), 
-    admin_name_ascii VARCHAR(120),  
-    admin_code VARCHAR(6),  
-    admin_type VARCHAR(27),  
-    capital VARCHAR(7),  
-    density FLOAT,  
-    population FLOAT,  
-    population_proper FLOAT,  
-    ranking INT,  
-    timezone VARCHAR(120), 
-    same_name VARCHAR(5), 
+    country VARCHAR, 
+    iso2 VARCHAR,  
+    iso3 VARCHAR,  
+    admin_name VARCHAR,    
+    capital VARCHAR,   
+    population INT,    
+    id INT
 );
 
-LOAD DATA INFILE 'D:/MilestoneProjects/Project2/weather-app/server/data/worldcities.csv'
-INTO TABLE table_name
-FIELDS TERMINATED BY ','
-ENCLOSED BY '"'
-LINES TERMINATED BY '\r\n'
-IGNORE 1 ROWS;
+npx sequelize-cli model:generate --name locations --attributes city:string,city_ascii:string,lat:double,lng:double,country:string,iso2:string,iso3:string,admin_name:string,capital:string,population:integer,id:integer
+
+city, city_ascii, lat, lng, country, iso2, iso3, admin_name, capital, population, id

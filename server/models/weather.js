@@ -14,22 +14,70 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   weather.init({
-    resolvedAddress: DataTypes.STRING,
-    date: DataTypes.DATE,
-    temperature_avg: DataTypes.INTEGER,
-    temperature_max: DataTypes.INTEGER,
-    temperature_min: DataTypes.INTEGER,
-    temperature_current: DataTypes.INTEGER,
-    humidity: DataTypes.DOUBLE,
-    precipitation_prob: DataTypes.FLOAT,
-    precipitation_type: DataTypes.STRING,
-    wind_speed: DataTypes.FLOAT,
-    wind_direction: DataTypes.FLOAT,
-    visibility: DataTypes.INTEGER,
-    sunrise: DataTypes.TIME,
-    sunset: DataTypes.TIME,
-    uv_index: DataTypes.FLOAT,
-    weather_condition: DataTypes.STRING
+    resolvedAddress: { 
+      type: DataTypes.STRING, 
+      allowNull: false,
+    },
+    date: { 
+      type: DataTypes.DATE, 
+      allowNull: false,
+    },
+    temperature_avg: { 
+      type: DataTypes.INTEGER, 
+      allowNull: false,
+    },
+    temperature_max: { 
+      type: DataTypes.INTEGER, 
+      allowNull: false,
+    },
+    temperature_min: { 
+      type: DataTypes.INTEGER, 
+      allowNull: false,
+    },
+    temperature_current: { 
+      type: DataTypes.INTEGER, 
+      allowNull: false,
+    },
+    humidity: { 
+      type: DataTypes.DOUBLE, 
+      allowNull: false,
+    },
+    precipitation_prob: { 
+      type: DataTypes.FLOAT, 
+      allowNull: false,
+    },
+    precipitation_type: { 
+      type: DataTypes.STRING, 
+      allowNull: false,
+    },
+    wind_speed: { 
+      type: DataTypes.FLOAT, 
+      allowNull: false,
+    },
+    wind_direction: { 
+      type: DataTypes.FLOAT, 
+      allowNull: false,
+    },
+    visibility: { 
+      type: DataTypes.INTEGER, 
+      allowNull: false,
+    },
+    sunrise: { 
+      type: DataTypes.TIME, 
+      allowNull: false,
+    },
+    sunset: { 
+      type: DataTypes.TIME, 
+      allowNull: false,
+    },
+    uv_index: { 
+      type: DataTypes.FLOAT, 
+      allowNull: false,
+    },
+    weather_condition: { 
+      type: DataTypes.STRING, 
+      allowNull: false,
+    },
   }, {
     sequelize,
     modelName: 'weather',
