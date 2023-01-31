@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useState } from "react";
 
@@ -6,16 +7,11 @@ function SearchWeather(props) {
 
     return (
         <div>
-            <label>Search Locations!</label>
-            <form onSubmit={(e) => props.handleSearch(e, search)}>
-
-                <input type="text" placeholder="Search Locations" onChange={
-                    (e) => setSearch(e.target.value)
-                } />
-
-                <input type="submit" />
-
-            </form>
+            <form onSubmit ={(e)=> props.handleSearch(e,search)}>
+            
+            <input type="text" placeholder='Search Locations'onChange={e=>setSearch(e.target.value)}/>
+            <input type="submit"/>
+          </form>
         </div>
     )
 };

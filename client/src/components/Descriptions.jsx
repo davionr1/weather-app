@@ -1,14 +1,13 @@
 //Adding the hi-temp, low-temp, humidity, wind speed, precipitation components
-import React from 'react';
+import React, { Fragment } from 'react';
 
-const Descriptions = () => {
+
+ const Descriptions = (props) => {
     return (
-    <div className="weather-descriptions">
-        <div className="card">
-            <div className='card-icon'></div>
-            </div>
-            </div>
+        <div></div>
     )
+    
+
 };
 
-export default Descriptions;
+export default Descriptions

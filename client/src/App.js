@@ -1,12 +1,18 @@
 import './App.css';
 import React from 'react';
-import { useEffect, useState } from 'react';
-// import SearchWeather from './components/SearchWeather';
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Header } from './header';
+import SearchWeather from './components/SearchWeather';
+import WeatherGallery from './components/WeatherGallery'
+import WeatherItem from './components/WeatherItem';
+import Descriptions from './components/Descriptions';
+import { Fragment, useEffect, useState, useRef } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 
 function App() {
+
   let [search, setSearch] = useState('')
+  let [data, setData] = useState([])
 
   const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
   // const api_key ='HSYWPZH9LXRTYUNAC5HYXZLX6'
@@ -28,13 +34,41 @@ function App() {
     }
   }, [search])
    
+  const handleSearch= (e,term)=>{
+    e.preventDefault()
+    setSearch(term)
+  }
+
+  
   return (
-    <div className="App">
-      <label>Search Locations</label>
-      <input type="text" onChange={e=>setSearch(e.target.value)}/>
-    </div>
+    <body>
+        <section>
+          <Header/>
+
+          <form onSubmit ={(e)=> handleSearch(e,search)}>
+            <input type="text" placeholder='Search Locations'onChange={e=>setSearch(e.target.value)}/>
+            <input type="submit"/>
+          </form>
+            
+            <WeatherGallery data={data}/>
+            
+            <Descriptions/>
+            {/* planning to use this later */}
+              {/* <Router>
+                <Routes>
+                  <Route path='/' element={
+                    <Fragment>
+                      
+                    </Fragment>
+                  }/>
+                </Routes>
+              </Router> */}
+      </section>
+    </body>
   );
+
+ 
+
 }
 
 export default App;
-
