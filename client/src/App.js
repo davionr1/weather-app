@@ -52,7 +52,7 @@ function App() {
             
             <WeatherGallery data={data}/>
             
-            <Descriptions/>
+            
             {/* planning to use this later */}
               {/* <Router>
                 <Routes>
