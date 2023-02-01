@@ -18,4 +18,8 @@ function weatherGallery(props) {
     )
 };
 
+<<<<<<< HEAD
 export default weatherGallery;
+=======
+export default weatherGallery;
+>>>>>>> f5dbd90 (set gallery and item components to output in app.js)

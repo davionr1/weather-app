@@ -48,4 +48,8 @@ function WeatherItem (props){
                 <p className='air-quality'></p>
                 <p className='precipitation'></p>
         </div> */}
+<<<<<<< HEAD
 export default WeatherItem;
+=======
+export default WeatherItem;
+>>>>>>> f5dbd90 (set gallery and item components to output in app.js)
