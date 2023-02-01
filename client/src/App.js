@@ -9,7 +9,8 @@ import WeatherItem from "./components/WeatherItem";
 
 function App() {
   let [search, setSearch] = useState("");
-
+  let [data, setData] = useState([])
+  
   const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
   // const api_key ='HSYWPZH9LXRTYUNAC5HYXZLX6'
   const WEATHER_HEAD =
@@ -35,11 +36,24 @@ function App() {
 
   return (
     <div className="App">
-      <SearchWeather />
-
-      <ListWeather />
-
-      <WeatherItem />
+     <form onSubmit ={(e)=> handleSearch(e,search)}>
+            <input type="text" placeholder='Search Locations'onChange={e=>setSearch(e.target.value)}/>
+            <input type="submit"/>
+          </form>
+            
+            <WeatherGallery data={data}/>
+            <WeatherItem/>
+            
+            {/* planning to use this later */}
+              {/* <Router>
+                <Routes>
+                  <Route path='/' element={
+                    <Fragment>
+                      
+                    </Fragment>
+                  }/>
+                </Routes>
+              </Router> */}
     </div>
   );
 }
