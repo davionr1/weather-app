@@ -1,9 +1,7 @@
 import React from "react";
 import WeatherItem from "./WeatherItem";
 
-function weatherGallery(props) {
-    const display = props.data.map((item,index)=>{
-        return<WeatherItem item={item} key{index}/>
+function listWeather(){
     return(
         //only a test for styling
         <div className='head'>
