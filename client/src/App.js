@@ -14,7 +14,7 @@ function App() {
   let [data, setData] = useState([])
 
   const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
-  // const api_key ='HSYWPZH9LXRTYUNAC5HYXZLX6'
+  
   const WEATHER_HEAD ="https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/";
   const WEATHER_MIDDLE = "?unitGroup=us&key=";
 
