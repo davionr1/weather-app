@@ -1,13 +1,12 @@
-import './App.css';
-import React from 'react';
-import { Header } from './header';
-import SearchWeather from './components/SearchWeather';
+import "./App.css";
+import React from "react";
+import { useEffect, useState } from "react";
+import SearchWeather from "./components/SearchWeather";
+import ListWeather from "./components/WeatherGallery";
+import WeatherItem from "./components/WeatherItem";
+// import SearchWeather from './components/SearchWeather';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import WeatherGallery from './components/WeatherGallery'
-import WeatherItem from './components/WeatherItem';
-import Descriptions from './components/Descriptions';
-import { Fragment, useEffect, useState, useRef } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-
 
 function App() {
 
@@ -42,33 +41,41 @@ function App() {
     setSearch(term)
   }
 
-  
   return (
-    <body>
-        <section>
-          <Header/>
+    <div className="App">
+      <SearchWeather />
 
-          <form onSubmit ={(e)=> handleSearch(e,search)}>
-            <input type="text" placeholder='Search Locations'onChange={e=>setSearch(e.target.value)}/>
-            <input type="submit"/>
-          </form>
-            
-            <WeatherGallery data={data}/>
-            
-            
-            {/* planning to use this later */}
-              {/* <Router>
-                <Routes>
-                  <Route path='/' element={
-                    <Fragment>
-                      
-                    </Fragment>
-                  }/>
-                </Routes>
-              </Router> */}
-      </section>
-    </body>
+      <WeatherGallery data={data} />
+
+      <WeatherItem />
+    </div>
   );
+  // return (
+  //   <body>
+  //       <section>
+  //         <Header/>
+          
+  //         <form onSubmit ={(e)=> handleSearch(e,search)}>
+  //           <input type="text" placeholder='Search Locations'onChange={e=>setSearch(e.target.value)}/>
+  //           <input type="submit"/>
+  //         </form>
+            
+  //           <WeatherGallery data={data}/>
+  //           <WeatherItem/>
+            
+  //           {/* planning to use this later */}
+  //             {/* <Router>
+  //               <Routes>
+  //                 <Route path='/' element={
+  //                   <Fragment>
+                      
+  //                   </Fragment>
+  //                 }/>
+  //               </Routes>
+  //             </Router> */}
+  //     </section>
+  //   </body>
+  // );
 
  
 

@@ -6,6 +6,7 @@ function weatherGallery(props) {
         return <WeatherItem item={item} key={index}/>
     })
     return(
+        
         //only a test for styling
         <div className='head'>
         <p className='city'>los angeles</p>
@@ -13,6 +14,7 @@ function weatherGallery(props) {
         <p className='weather-description'>cloudy</p>
         <p className='max-temp'>88°</p>
         <p className='min-temp'>78°</p>
+        
     </div>
     
     )
