@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 
 function SearchWeather(props) {
-    
+
 
     return (
         <div className='overlay'>
@@ -11,17 +11,17 @@ function SearchWeather(props) {
                 <div className="section section_inputs">
                     <form onSubmit={(e) => props.handleData(e)}>
 
-                <input type="text" placeholder="Search Locations" onChange={
-                    (e) => props.handleSearch(e.target.value)
-                } />
+                        <input type="text" placeholder="Search Locations" onChange={
+                            (e) => props.handleSearch(e.target.value)
+                        } />
 
-                <input type="submit" />
+                        <input type="submit" />
 
-            </form>
+                    </form>
 
                 </div>
-            </div>       
-         </div>   
+            </div>
+        </div>
 
     )
 };

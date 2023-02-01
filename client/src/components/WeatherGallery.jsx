@@ -2,22 +2,22 @@ import React from "react";
 import WeatherItem from "./WeatherItem";
 
 function weatherGallery(props) {
-    const display = props.data.map((item, index)=> {
-        return <WeatherItem item={item} key={index}/>
+    const display = props.data.map((item, index) => {
+        return <WeatherItem item={item} key={index} />
     })
-    
-    console.log('props', props.data)
-    return(
+
+    console.log('city', props.data)
+    return (
         //only a test for styling
         <div className='head'>
-         {/* <p className='city'>los angeles</p>
+            {/* <p className='city'>los angeles</p>
          <p className='temperature'>77°</p>
          <p className='weather-description'>cloudy</p>
          <p className='max-temp'>88°</p>
-         <p className='min-temp'>78°</p>
-         {display} */}
-    </div>
-    
+         <p className='min-temp'></p> */}
+
+        </div>
+
     )
 };
 
