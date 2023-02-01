@@ -1,7 +1,7 @@
 import React from "react";
 import WeatherItem from "./WeatherItem";
 
-function listWeather(){
+function ListWeather(){
     return(
         <h1>List</h1>
         
