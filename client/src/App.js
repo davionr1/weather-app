@@ -4,7 +4,6 @@ import { Header } from './header';
 import SearchWeather from './components/SearchWeather';
 import WeatherGallery from './components/WeatherGallery'
 import WeatherItem from './components/WeatherItem';
-import Descriptions from './components/Descriptions';
 import { Fragment, useEffect, useState, useRef } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
