@@ -6,7 +6,6 @@ function weatherGallery(props) {
         return <WeatherItem item={item} key={index}/>
     })
     return(
-        
         //only a test for styling
         <div className='head'>
         <p className='city'>los angeles</p>
@@ -20,8 +19,5 @@ function weatherGallery(props) {
     )
 };
 
-<<<<<<< HEAD
 export default weatherGallery;
-=======
-export default weatherGallery;
->>>>>>> f5dbd90 (set gallery and item components to output in app.js)
+

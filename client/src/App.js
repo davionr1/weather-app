@@ -1,12 +1,13 @@
-import "./App.css";
-import React from "react";
-import { useEffect, useState } from "react";
-import SearchWeather from "./components/SearchWeather";
-import ListWeather from "./components/WeatherGallery";
-import WeatherItem from "./components/WeatherItem";
-// import SearchWeather from './components/SearchWeather';
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import './App.css';
+import React from 'react';
+import { Header } from './header';
+import SearchWeather from './components/SearchWeather';
 import WeatherGallery from './components/WeatherGallery'
+import WeatherItem from './components/WeatherItem';
+import Descriptions from './components/Descriptions';
+import { Fragment, useEffect, useState, useRef } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
 
 function App() {
 
