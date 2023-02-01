@@ -3,10 +3,9 @@ import React from 'react';
 import { Header } from './header';
 import SearchWeather from './components/SearchWeather';
 import WeatherGallery from './components/WeatherGallery'
-import WeatherItem from './components/WeatherItem';
 import { Fragment, useEffect, useState, useRef } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-
+import { FaArrowDown } from "react-icons/fa";
 
 function App() {
 
@@ -14,10 +13,11 @@ function App() {
   let [data, setData] = useState([])
 
   const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
-  // const api_key ='HSYWPZH9LXRTYUNAC5HYXZLX6'
-  const WEATHER_HEAD =
-    "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/";
+
+  const WEATHER_HEAD = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/";
   const WEATHER_MIDDLE = "?unitGroup=us&key=";
+
+
 
   useEffect(() => {
     if (search) {
@@ -28,6 +28,8 @@ function App() {
         const resData = await response.json();
         if (resData) {
           console.log(resData);
+          setData([resData]);
+          console.log('data', data)
         } else {
           console.log("ERROR");
         }
@@ -35,40 +37,42 @@ function App() {
       fetchData();
     }
   }, [search])
-   
-  const handleSearch= (e,term)=>{
-    e.preventDefault()
+
+  const handleSearch = (term) => {
     setSearch(term)
   }
 
+  const handleData = (data) => {
+    setData(data)
+  }
   return (
     <div className="App">
-      <SearchWeather />
+      <SearchWeather search={search} handleSearch={handleSearch} handleData={handleData} />
 
       <WeatherGallery data={data} />
 
-      <WeatherItem />
+      
     </div>
   );
   // return (
   //   <body>
   //       <section>
   //         <Header/>
-          
+
   //         <form onSubmit ={(e)=> handleSearch(e,search)}>
   //           <input type="text" placeholder='Search Locations'onChange={e=>setSearch(e.target.value)}/>
   //           <input type="submit"/>
   //         </form>
-            
+
   //           <WeatherGallery data={data}/>
   //           <WeatherItem/>
-            
+
   //           {/* planning to use this later */}
   //             {/* <Router>
   //               <Routes>
   //                 <Route path='/' element={
   //                   <Fragment>
-                      
+
   //                   </Fragment>
   //                 }/>
   //               </Routes>
@@ -77,7 +81,7 @@ function App() {
   //   </body>
   // );
 
- 
+
 
 }
 
