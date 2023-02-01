@@ -36,24 +36,11 @@ function App() {
 
   return (
     <div className="App">
-     <form onSubmit ={(e)=> handleSearch(e,search)}>
-            <input type="text" placeholder='Search Locations'onChange={e=>setSearch(e.target.value)}/>
-            <input type="submit"/>
-          </form>
-            
-            <WeatherGallery data={data}/>
-            <WeatherItem/>
-            
-            {/* planning to use this later */}
-              {/* <Router>
-                <Routes>
-                  <Route path='/' element={
-                    <Fragment>
-                      
-                    </Fragment>
-                  }/>
-                </Routes>
-              </Router> */}
+      <SearchWeather />
+
+      <ListWeather />
+
+      <WeatherItem />
     </div>
   );
 }
