@@ -16,21 +16,24 @@ function App() {
 
   const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
   // const api_key ='HSYWPZH9LXRTYUNAC5HYXZLX6'
-  const WEATHER_HEAD = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/'
-  const WEATHER_MIDDLE = '?unitGroup=us&key='
- 
-  useEffect(()=>{
-    if(search){
+  const WEATHER_HEAD =
+    "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/";
+  const WEATHER_MIDDLE = "?unitGroup=us&key=";
+
+  useEffect(() => {
+    if (search) {
       const fetchData = async () => {
-        const response = await fetch(WEATHER_HEAD + search + WEATHER_MIDDLE + API_KEY)
-        const resData = await response.json()
-        if (resData){
-          console.log(resData)
-        }else{
-          console.log('ERROR')
+        const response = await fetch(
+          WEATHER_HEAD + search + WEATHER_MIDDLE + API_KEY
+        );
+        const resData = await response.json();
+        if (resData) {
+          console.log(resData);
+        } else {
+          console.log("ERROR");
         }
-      }
-      fetchData()
+      };
+      fetchData();
     }
   }, [search])
    
@@ -39,33 +42,41 @@ function App() {
     setSearch(term)
   }
 
-  
   return (
-    <body>
-        <section>
-          <Header/>
+    <div className="App">
+      <SearchWeather />
 
-          <form onSubmit ={(e)=> handleSearch(e,search)}>
-            <input type="text" placeholder='Search Locations'onChange={e=>setSearch(e.target.value)}/>
-            <input type="submit"/>
-          </form>
-            
-            <WeatherGallery data={data}/>
-            
-            
-            {/* planning to use this later */}
-              {/* <Router>
-                <Routes>
-                  <Route path='/' element={
-                    <Fragment>
-                      
-                    </Fragment>
-                  }/>
-                </Routes>
-              </Router> */}
-      </section>
-    </body>
+      <WeatherGallery data={data} />
+
+      <WeatherItem />
+    </div>
   );
+  // return (
+  //   <body>
+  //       <section>
+  //         <Header/>
+          
+  //         <form onSubmit ={(e)=> handleSearch(e,search)}>
+  //           <input type="text" placeholder='Search Locations'onChange={e=>setSearch(e.target.value)}/>
+  //           <input type="submit"/>
+  //         </form>
+            
+  //           <WeatherGallery data={data}/>
+  //           <WeatherItem/>
+            
+  //           {/* planning to use this later */}
+  //             {/* <Router>
+  //               <Routes>
+  //                 <Route path='/' element={
+  //                   <Fragment>
+                      
+  //                   </Fragment>
+  //                 }/>
+  //               </Routes>
+  //             </Router> */}
+  //     </section>
+  //   </body>
+  // );
 
  
 

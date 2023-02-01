@@ -13,9 +13,11 @@ function weatherGallery(props) {
         <p className='weather-description'>cloudy</p>
         <p className='max-temp'>88°</p>
         <p className='min-temp'>78°</p>
+        
     </div>
     
     )
 };
 
 export default weatherGallery;
+
