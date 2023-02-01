@@ -22,4 +22,4 @@ function ListWeather(){
     )
 };
 
-export default weatherGallery;
+export default ListWeather;
