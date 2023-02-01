@@ -15,9 +15,10 @@ function App() {
 
   const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
   // const api_key ='HSYWPZH9LXRTYUNAC5HYXZLX6'
-  const WEATHER_HEAD =
-    "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/";
+  const WEATHER_HEAD ="https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/";
   const WEATHER_MIDDLE = "?unitGroup=us&key=";
+
+  
 
   useEffect(() => {
     if (search) {
@@ -28,6 +29,8 @@ function App() {
         const resData = await response.json();
         if (resData) {
           console.log(resData);
+          setData([resData]);
+          console.log('data', data)
         } else {
           console.log("ERROR");
         }
@@ -36,18 +39,21 @@ function App() {
     }
   }, [search])
    
-  const handleSearch= (e,term)=>{
-    e.preventDefault()
+  const handleSearch= (term)=>{
+    
     setSearch(term)
   }
 
+const handleData=(data)=>{
+  setData(data)
+}
   return (
     <div className="App">
-      <SearchWeather />
+      <SearchWeather search={search} handleSearch={handleSearch} handleData={handleData}/>
 
-      <WeatherGallery data={data} />
+      <WeatherGallery data={data}  />
 
-      <WeatherItem />
+      {/* <WeatherItem /> */}
     </div>
   );
   // return (
