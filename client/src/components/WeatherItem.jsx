@@ -1,40 +1,40 @@
-import { useState } from 'react' 
-import { Link } from 'react-router-dom'
-import { FaArrowDown } from "react-icons/fa";
-import './weather.css'
-const WeatherItem = () => {
-  return (
-    <div className='section section_descriptions'>
-        <div className='card'>
-            <div className='description_card-icon'>
-               <FaArrowDown />
-                <small>air quality</small>
+
+
+function WeatherItem (props){
+    const headerStyle={
+        // style
+    }
+    const bodyStyle={
+        //style
+    }
+   const headerView = ()=> {
+    return (
+        //find out why the test data is not being outputted though this component
+        <div className='weather'>
+            <div style={headerStyle}>
+                <p className='city'>los angeles</p>
+                <p className='temperature'>77°</p>
+                <p className='weather-description'>cloudy</p>
+                <p className='max-temp'>88°</p>
+                <p className='min-temp'>78°</p>
             </div>
-            <h2>25 °F</h2>
+            
         </div>
-      <div className='card'>
-            <div className='description_card-icon'>
-               <FaArrowDown />
-                <small>min</small>
-            </div>
-            <h2>25 °F</h2>
-        </div>
-      <div className='card'>
-            <div className='description_card-icon'>
-               <FaArrowDown />
-                <small>max</small>
-            </div>
-            <h2>25 °F</h2>
-        </div>
-      <div className='card'>
-            <div className='description_card-icon'>
-               <FaArrowDown />
-                <small>humidity</small>
-            </div>
-            <h2>25 °F</h2>
-        </div>
-      {/* code to output data but not working for now */}
-      {/* after data is able to be outputted, plug props data into the styling  */}
+    )}
+    const bodyView=()=>{
+        return(
+            <div style={bodyStyle}>
+                <p className='hourly-card'>1am</p>
+                <p className='daily-card'>today</p>
+                <p className='air-quality'>49-good</p>
+                <p className='precipitation'>1mm in last 24hrs</p>
+             </div>
+    )
+}
+}
+
+{/* code to output data but not working for now */}
+
             {/* <div className='head'>
                 <p className='city'>{props.item.resolvedAddress}</p>
                 <p className='temperature'>{props.item.temp}°</p>
@@ -48,9 +48,4 @@ const WeatherItem = () => {
                 <p className='air-quality'></p>
                 <p className='precipitation'></p>
         </div> */}
-    </div>
-  )
-}
-
-
 export default WeatherItem;

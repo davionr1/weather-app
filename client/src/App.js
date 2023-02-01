@@ -1,17 +1,14 @@
-import "./App.css";
-import React from "react";
-import { useEffect, useState } from "react";
-import SearchWeather from "./components/SearchWeather";
-import ListWeather from "./components/WeatherGallery";
-import WeatherItem from "./components/WeatherItem";
+import './App.css';
+import React from 'react';
+import { useEffect, useState } from 'react';
 // import SearchWeather from './components/SearchWeather';
 // import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
+
 function App() {
-  let [search, setSearch] = useState("");
-  let [data, setData] = useState([])
-  
-  const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+  let [search, setSearch] = useState('')
+
+  const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
   // const api_key ='HSYWPZH9LXRTYUNAC5HYXZLX6'
   const WEATHER_HEAD =
     "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/";
@@ -32,17 +29,18 @@ function App() {
       };
       fetchData();
     }
-  }, [search]);
-
+  }, [search])
+   
   return (
     <div className="App">
-      <SearchWeather />
-
-      <ListWeather />
-
-      <WeatherItem />
+      <label>Search Locations</label>
+      <input type="text" onChange={e=>setSearch(e.target.value)}/>
     </div>
   );
+
+ 
+
 }
 
 export default App;
+
