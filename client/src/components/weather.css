@@ -1,8 +1,16 @@
+
+/* CSS for weather items */
+
 .section_descriptions {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 3rem;
+    position: relative;
+    top: 130px;
     color: white;
+    width:75rem;
+    left:20rem;
+    
 }
 
 h2 {

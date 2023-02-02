@@ -7,18 +7,6 @@ function weatherGallery(props) {
     })
 
     console.log('city', props.data)
-    return (
-        //only a test for styling
-        <div className='head'>
-            {/* <p className='city'>los angeles</p>
-         <p className='temperature'>77°</p>
-         <p className='weather-description'>cloudy</p>
-         <p className='max-temp'>88°</p>
-         <p className='min-temp'></p> */}
-
-        </div>
-
-    )
 };
 
 export default weatherGallery;
