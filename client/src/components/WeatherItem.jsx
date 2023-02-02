@@ -19,30 +19,36 @@ const WeatherItem = (props) => {
       <div className="section section_temperature">
               <div className="icon">
                 <h3>Los Angeles, CA</h3>
+                {/* <h1>{props.resolvedAddress}</h1> */}
                 <img
                   src="https://cdn-icons-png.flaticon.com/128/414/414927.png"
                   alt="Weather icon"
                 />
+                {/* <h1>{props.currentConditions.icon}</h1> */}
                 <h3>Cloudy</h3>
+                <h3>{props.descriptions}</h3>
               </div>
               <div className="temperature">
                 <h1>77 °F</h1>
+                {/* <h2>{props.currentConditions.temp}</h2> */}
               </div>
             </div>
       <div className="section section_descriptions">
         <div className="card">
           <div className="description_card-icon">
             <FaArrowDown />
-            <small>min</small>
+            <small>min temp</small>
           </div>
           <h2>65 °F</h2>
+          {/* {props.days[0].tempmin} */}
         </div>
         <div className="card">
           <div className="description_card-icon">
             <FaArrowUp />
-            <small>max</small>
+            <small>max temp</small>
           </div>
           <h2>78 °F</h2>
+          {/* {props.days[0].tempmax} */}
         </div>
         <div className="card">
           <div className="description_card-icon">
@@ -50,6 +56,7 @@ const WeatherItem = (props) => {
             <small>wind speed</small>
           </div>
           <h2>2mph</h2>
+          {/* {props.currentConditions.windspeed} */}
         </div>
         <div className="card">
           <div className="description_card-icon">
@@ -57,6 +64,7 @@ const WeatherItem = (props) => {
             <small>humidity</small>
           </div>
           <h2>41%</h2>
+          {/* {props.currentConditions.humidity} */}
         </div>
       </div>
     </div>
