@@ -1,5 +1,8 @@
 import React from "react";
 import WeatherItem from "./WeatherItem";
+import { FaArrowDown, FaArrowUp, FaWind } from "react-icons/fa";
+import { WiHumidity } from "react-icons/wi";
+import './weather.css'
 
 function weatherGallery(props) {
     const display = props.data.map((item, index) => {

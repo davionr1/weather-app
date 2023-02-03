@@ -3,36 +3,37 @@ import { WiHumidity } from "react-icons/wi";
 import './weather.css'
 import React from "react";
 const WeatherItem = (props) => {
-    return (
-        <div
+  return (
+    
+    <div
       className="App"
       style={{
         backgroundImage:
           "url('https://rare-gallery.com/uploads/posts/124416-miui-8-rainy-weather-background-minimal-hd.png')",
       }}
     >
-    
-      
 
-      
+
+
+
       {/* Input Weather items in app js for now for styling */}
       <div className="section section_temperature">
-              <div className="icon">
-                <h3>Los Angeles, CA</h3>
-                {/* <h1>{props.resolvedAddress}</h1> */}
-                <img
-                  src="https://cdn-icons-png.flaticon.com/128/414/414927.png"
-                  alt="Weather icon"
-                />
-                {/* <h1>{props.currentConditions.icon}</h1> */}
-                <h3>Cloudy</h3>
-                <h3>{props.descriptions}</h3>
-              </div>
-              <div className="temperature">
-                <h1>77 °F</h1>
-                {/* <h2>{props.currentConditions.temp}</h2> */}
-              </div>
-            </div>
+        <div className="icon">
+          <h3>Los Angeles, CA</h3>
+          {/* <h1>{props.resolvedAddress}</h1> */}
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/414/414927.png"
+            alt="Weather icon"
+          />
+          {/* <h1>{props.currentConditions.icon}</h1> */}
+          <h3>Cloudy</h3>
+          {/* <h3>{props.descriptions}</h3> */}
+        </div>
+        <div className="temperature">
+          <h1>77 °F</h1>
+          {/* <h2>{props.currentConditions.temp}</h2> */}
+        </div>
+      </div>
       <div className="section section_descriptions">
         <div className="card">
           <div className="description_card-icon">
@@ -68,11 +69,11 @@ const WeatherItem = (props) => {
         </div>
       </div>
     </div>
-    )
+  )
 }
-            {/* code to output data but not working for now  */}
-            {/* after data is able to be outputted, plug props data into the styling  */}
-            {/*  <p className='city'>{props.item.city}</p>
+{/* code to output data but not working for now  */ }
+{/* after data is able to be outputted, plug props data into the styling  */ }
+{/*  <p className='city'>{props.item.city}</p>
                 <p className='temperature'>{props.item.temperature}°</p>
                 <p className='weather-description'>{props.item.weatherDescription}</p>
                 <p className='max-temp'>{props.item.maxTemp}°</p>
