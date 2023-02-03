@@ -2,19 +2,16 @@
   text-align: center;
   margin-left: 300px;
   color:white;
-  
-
+ position: relative;
+top:60px;
 }
 .col-sm-9{
   
   font-size: 35px;
 }
-.col-sm-4{
 
-}
-.col-sm-5{
 
-}
+
 .row{
   font-size: 25px;
   margin-left: 0px;
