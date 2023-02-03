@@ -7,6 +7,7 @@ import { Fragment, useEffect, useState, useRef } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { FaArrowDown, FaArrowUp, FaWind } from "react-icons/fa";
 import { WiHumidity } from "react-icons/wi";
+import WeatherItem from "./components/WeatherItem";
 
 function App() {
   let [search, setSearch] = useState("");
@@ -52,45 +53,19 @@ function App() {
           "url('https://rare-gallery.com/uploads/posts/124416-miui-8-rainy-weather-background-minimal-hd.png')",
       }}
     >
-      <SearchWeather
-        search={search}
-        handleSearch={handleSearch}
-        handleData={handleData}
-      />
-
-      <WeatherGallery data={data} />
-      {/* Input Weather items in app js for now for styling */}
-      <div className="section section_descriptions">
-        <div className="card">
-          <div className="description_card-icon">
-            <FaArrowDown />
-            <small>min</small>
-          </div>
-          <h2>65 °F</h2>
-        </div>
-        <div className="card">
-          <div className="description_card-icon">
-            <FaArrowUp />
-            <small>max</small>
-          </div>
-          <h2>78 °F</h2>
-        </div>
-        <div className="card">
-          <div className="description_card-icon">
-            <FaWind />
-            <small>wind speed</small>
-          </div>
-          <h2>2mph</h2>
-        </div>
-        <div className="card">
-          <div className="description_card-icon">
-            <WiHumidity />
-            <small>humidity</small>
-          </div>
-          <h2>41%</h2>
-        </div>
-      </div>
+      <Header />
+      <SearchWeather search={search} handleSearch={handleSearch} handleData={handleData} />
+      <WeatherItem data={data} />
+      {/* <Router>
+          <Routes>
+            <Route path='/' element={<WeatherItem data={data}/>} />
+            <Route path='create' element={<AddList/>}/>
+            <Route path='edit' element={<editList/>}/>
+            <Route path='delete' element={<deleteList/>}/>
+          </Routes>
+        </Router> */}
     </div>
+
   );
   // return (
   //   <body>

@@ -51,8 +51,13 @@
   justify-content: space-around;
   background-color: var(--section-overlay);
   align-content: space-between;
+<<<<<<< HEAD
  
  }
+=======
+
+}
+>>>>>>> front-end-styling
 
 
 .section_inputs {
