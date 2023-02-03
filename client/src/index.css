@@ -51,10 +51,8 @@
   justify-content: space-around;
   background-color: var(--section-overlay);
   align-content: space-between;
-  width:80rem;
-  position: relative;
-  left:17.5rem;
- }
+
+}
 
 
 .section_inputs {
