@@ -3,8 +3,9 @@ import { WiHumidity } from "react-icons/wi";
 import './weather.css'
 import React from "react";
 const WeatherItem = (props) => {
+  console.log('this is my data',props.data)
   return (
-    
+
     <div
       className="App"
       style={{
@@ -13,13 +14,10 @@ const WeatherItem = (props) => {
       }}
     >
 
-
-
-
       {/* Input Weather items in app js for now for styling */}
       <div className="section section_temperature">
         <div className="icon">
-          <h3>Los Angeles, CA</h3>
+          <h3>{props.data[0]['resolvedAddress']}</h3>
           {/* <h1>{props.resolvedAddress}</h1> */}
           <img
             src="https://cdn-icons-png.flaticon.com/128/414/414927.png"

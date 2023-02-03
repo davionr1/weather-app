@@ -4,12 +4,15 @@ import { useState } from "react";
 
 function SearchWeather(props) {
 
-
+const handleSubmit=(event)=>{
+    event.preventDefault();
+    
+}
     return (
         <div className='overlay'>
             <div className='container'>
                 <div className="section section_inputs">
-                    <form onSubmit={(e) => props.handleData(e)}>
+                    <form onSubmit={handleSubmit} >
 
                         <input type="text" placeholder="Search Locations" onChange={
                             (e) => props.handleSearch(e.target.value)

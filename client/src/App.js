@@ -11,7 +11,9 @@ import WeatherItem from "./components/WeatherItem";
 
 function App(item, index) {
   let [search, setSearch] = useState("");
-  let [data, setData] = useState([]);
+  let [data, setData] = useState([{
+    
+  }]);
 
   const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
@@ -40,6 +42,7 @@ function App(item, index) {
 
   const handleSearch = (term) => {
     setSearch(term);
+    
   };
 
   const handleData = (data) => {
@@ -64,9 +67,9 @@ function App(item, index) {
       {/* <Router>
           <Routes>
             <Route path='/' element={<WeatherItem data={data}/>} />
-            <Route path='create' element={<weatherList/>}/>
-            <Route path='edit' element={<editList/>}/>
-            <Route path='delete' element={<deleteList/>}/>
+            <Route path='/create' element={<weatherList/>}/>
+            <Route path='/edit' element={<editList/>}/>
+            <Route path='/delete' element={<deleteList/>}/>
           </Routes>
         </Router> */}
     </div>
