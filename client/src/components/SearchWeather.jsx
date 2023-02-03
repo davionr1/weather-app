@@ -1,28 +1,24 @@
-
-import React from "react";
 import { useState } from "react";
+// import WeatherItem from "./WeatherItem";
+import axios from "axios";
 
-function SearchWeather(props) {
+function SearchWeather() {
 
+    // let [locationsData, setLocationsData] = useState([])
+
+    async function getLocationData() {
+        const response = await axios.get('http://localhost:4000/locations');
+        const data = await response.body;
+        console.log(data);
+    }
+
+    getLocationData();
 
     return (
-        <div className='overlay'>
-            <div className='container'>
-                <div className="section section_inputs">
-                    <form onSubmit={(e) => props.handleData(e)}>
-
-                        <input type="text" placeholder="Search Locations" onChange={
-                            (e) => props.handleSearch(e.target.value)
-                        } />
-
-                        <input type="submit" />
-
-                    </form>
-
-                </div>
-            </div>
+        <div>
+            <input type="text" placeholder="Search Locations" />
+            {/* <WeatherItem /> */}
         </div>
-
     )
 };
 
