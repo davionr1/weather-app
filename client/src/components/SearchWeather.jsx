@@ -18,7 +18,7 @@ const handleSubmit=(event)=>{
                             (e) => props.handleSearch(e.target.value)
                         } />
 
-                        <input type="submit" />
+                        {/* <input type="submit"  /> */}
 
                     </form>
 

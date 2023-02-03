@@ -1,4 +1,3 @@
-
 /* CSS for weather items */
 
 .section_descriptions {
@@ -8,8 +7,8 @@
     position: relative;
     top: 100px;
     color: white;
-   width:55rem;
-   left:28rem;
+    width: 55rem;
+    left: 28rem;
 }
 
 h2 {
@@ -47,5 +46,3 @@ h2 {
 
     }
 }
-
-

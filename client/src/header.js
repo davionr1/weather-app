@@ -5,8 +5,8 @@ export function Header() {
         <div className="header">
             <div class="col-sm-9">Weather App</div>
             <div className="row">
-                <div class="col-sm-4">Home</div>
-                <div class="col-sm-5">Weather List</div>
+                <a class="col-sm-4">Home</a>
+                <a class="col-sm-5">Weather List</a>
             </div>
         </div>
     )
