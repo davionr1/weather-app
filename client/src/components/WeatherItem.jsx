@@ -1,54 +1,70 @@
-import { FaArrowDown } from "react-icons/fa";
 import './weather.css'
 import React from "react";
-const WeatherItem = (props) => {
-    return (
-        <div className='section section_descriptions'>
-            <div className='head'>
-            {/* input loc, temp, min max temp, description */}
+import { useState } from "react";
+import { useEffect } from "react";
+import WeatherGallery from './WeatherGallery';
 
+
+function WeatherItem(props) {
+
+    let [locationWeather, setLocationWeather] = useState(false)
+
+    console.log(props.handleLocation);
+
+    function locationName() {
+        if (props.handleLocation.city_ascii !== []) {
+            const city =
+                (props.handleLocation.city_ascii + ' ' + props.handleLocation.admin_name + ' ' + props.handleLocation.iso3);
+            console.log("Location Name:", city);
+            return city;
+        }
+    }
+    let location = locationName()
+
+    // const locationFunc = async () =>{
+    //     const result = await axios(name)
+    //     return result
+    // }
+
+    // let location = locationFunc()
+
+    const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
+    const WEATHER_HEAD = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/";
+    const WEATHER_MIDDLE = "?unitGroup=us&key=";
+
+    useEffect(() => {
+        if (location !== 'undefined') {
+            const fetchData = async () => {
+                const response = await fetch(
+                    WEATHER_HEAD + location + WEATHER_MIDDLE + API_KEY
+                );
+                const resData = await response.json();
+                if (resData) {
+                    // console.log(resData)
+                    setLocationWeather([resData]);
+                    console.log('data', locationWeather)
+                } else {
+                    console.log("ERROR");
+                }
+            };
+            fetchData();
+        }else{
+            console.log("No Location Name Selected")
+        }
+    }, [location])
+
+    console.log('Location Weather: ',locationWeather)
+    // console.log('Location weather length:', location.length)
+
+
+    return (
+        <div>
+            <h1>Locations Weather</h1>
+            {/* {weather ? weather : 'There is no weather data available'} */}
+            {/* <button onClick={createWeatherInfo}> Create Location </button> */}
+            <div>
+                <WeatherGallery handleSetLocation={locationWeather}/>
             </div>
-            <div className='card'>
-                <div className='description_card-icon'>
-                    <FaArrowDown />
-                    <small>air quality</small>
-                </div>
-                <h2>25 °F</h2>
-            </div>
-            <div className='card'>
-                <div className='description_card-icon'>
-                    <FaArrowDown />
-                    <small>min</small>
-                </div>
-                <h2>{props.item.minTemp}</h2>
-            </div>
-            <div className='card'>
-                <div className='description_card-icon'>
-                    <FaArrowDown />
-                    <small>max</small>
-                </div>
-                <h2>25 °F</h2>
-            </div>
-            <div className='card'>
-                <div className='description_card-icon'>
-                    <FaArrowDown />
-                    <small>humidity</small>
-                </div>
-                <h2>25 °F</h2>
-            </div>
-            {/* code to output data but not working for now  */}
-            {/* after data is able to be outputted, plug props data into the styling  */}
-            {/*  <p className='city'>{props.item.city}</p>
-                <p className='temperature'>{props.item.temperature}°</p>
-                <p className='weather-description'>{props.item.weatherDescription}</p>
-                <p className='max-temp'>{props.item.maxTemp}°</p>
-                <p className='min-temp'>{props.item.minTemp}°</p>
-            </div>
-            <div className='weather-details'>
-                <p className='hourly-card'>{props.item.description}</p>
-                <p className='daily-card'>{props.item.days}</p>
-                <p className='air-quality'></p>
-                <p className='precipitation'></p>*/}
         </div>
     )
 }

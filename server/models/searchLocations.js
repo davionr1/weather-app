@@ -22,14 +22,15 @@ const client = new Pool({
 
 client.connect();
 
-axios.get('/locations', async (req, res) => {
+app.get('/locations', async () => {
     const locationData = `SELECT * from locations`;
-    client
+    await client
         .query(locationData, (error, results)=>{
             if (error){
                 throw error
             }else{
                 response.status(200).body(results.rows)
+                return results.data
             }
         })
         // .then((response) => {

@@ -1,6 +1,20 @@
 -- Creating Migration For Weather Table:
 -- // npx sequelize-cli model:generate --name weather --attributes resolvedAddress:string,date:date,temperature_avg:integer,temperature_max:integer,temperature_min:integer,temperature_current:integer,humidity:double,precipitation_prob:float,precipitation_type:string,wind_speed:float,wind_direction:float,visibility:integer,sunrise:time,sunset:time,uv_index:float,weather_condition:string
 
+CREATE TABLE weather(
+    weather_id serial primary key not null,
+    resolvedaddress varchar,
+    currentdata varchar,
+    currenttime varchar,
+    currenttemp integer,
+    tempmax integer,
+    tempfeels integer,
+    sunrise varchar,
+    sunset varchar,
+    conditions varchar,
+    icon varchar
+);
+
 --How to run migrations:
 -- // npx sequelize-cli db:migrate
 --Undoing Migrations

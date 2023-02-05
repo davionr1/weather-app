@@ -1,0 +1,62 @@
+.container {
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+/* (A) GRID CONTAINER */
+#grid-line {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 1em;
+    margin: 1em;
+}
+
+/* (B) GRID CELL */
+div.cell {
+    background: lightgray;
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* (C) SPAN MULTIPLE COLUMNS */
+.spancol {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.spanrow {
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: right;
+}
+
+.box {
+    margin-right: 1em;
+    background-color: lightblue;
+    width: 20%;
+    height: auto;
+}
+
+.title {
+    height: 50%;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+.sub-text {
+    height: auto;
+    font-size: 1em;
+    text-align: center;
+}
+
+* {
+    border: 1px solid red;
+}

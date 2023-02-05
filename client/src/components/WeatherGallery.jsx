@@ -1,25 +1,60 @@
-import React from "react";
+import React, { useState } from "react";
 import WeatherItem from "./WeatherItem";
+import './weatherGallery.css'
 
-function weatherGallery(props) {
-    const display = props.data.map((item, index) => {
-        return <WeatherItem item={item} key={index} />
-    })
+function WeatherGallery(props) {
+    function createWeatherItem() {
+        const weatherItem = props.handleSetLocation;
+        console.log("Weather Item", weatherItem)
+        if (Array.isArray(weatherItem)) {
+            return (
+                <div id="grid-line">
+                    <div class="cell spancol">
+                        {weatherItem[0].resolvedAddress}
+                        <div className="flex-container">
+                            <div className="box">
+                                <div class="title">
+                                    {weatherItem[0].currentConditions.datetime}
+                                </div>
+                                <div className="sub-text">
+                                    {weatherItem[0].currentConditions.conditions}
+                                </div>
+                            </div>
 
-    console.log('city', props.data)
+                            <div className="box">
+                                <div className="title">
+                                    {weatherItem[0].currentConditions.temp}°
+                                </div>
+                                <div className="sub-text">
+                                    <div class="cell">Cell</div>
+                                    <div class="cell">Cell</div>
+                                    <div class="cell">Cell</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cell">Cell</div>
+                    <div class="cell">Cell</div>
+                    <div class="cell">Cell</div>
+                    <div class="cell spancol">
+
+                    </div>
+                </div>
+            )
+        }
+
+    }
+    // createWeatherItem();
     return (
         //only a test for styling
         <div className='head'>
-            {/* <p className='city'>los angeles</p>
-         <p className='temperature'>77°</p>
-         <p className='weather-description'>cloudy</p>
-         <p className='max-temp'>88°</p>
-         <p className='min-temp'></p> */}
+            {createWeatherItem()}
 
         </div>
 
     )
 };
 
-export default weatherGallery;
+export default WeatherGallery;
 
