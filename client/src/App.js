@@ -4,6 +4,8 @@ import SearchWeather from './components/SearchWeather';
 import WeatherGallery from './components/WeatherGallery'
 
 function App() {
+  let [search, setSearch] = useState("");
+  let [data, setData] = useState([]);
 
 
   return (
@@ -20,6 +22,7 @@ function App() {
       <h1 className='title'>What's the Weather?</h1>
       <SearchWeather />
     </div>
+
   );
 }
 
