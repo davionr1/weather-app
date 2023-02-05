@@ -37,7 +37,7 @@ const WeatherItem = (props) => {
             <small>min temp</small>
           </div>
 
-<h2>{props.data[0].days[0].tempmin}</h2>
+          {/* <h2>{props.data[0].days[0].tempmin}</h2> */}
         </div>
         <div className="card">
           <div className="description_card-icon">
@@ -45,7 +45,7 @@ const WeatherItem = (props) => {
             <small>max temp</small>
           </div>
 
-          <h2>{props.data[0].days[0].tempmax}</h2>
+          {/* <h2>{props.data[0].days[0].tempmax}</h2> */}
         </div>
         <div className="card">
           <div className="description_card-icon">
