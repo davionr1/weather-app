@@ -11,7 +11,7 @@
 
 .section_descriptions {
     display: grid;
-    grid-template-columns: repeat(2, 2fr);
+    grid-template-columns: repeat(3, 2fr);
     gap: 2rem;
     position: sticky;
     color: white;
@@ -34,7 +34,7 @@ h2 {
 
 .card {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     background-color: var(--section-overlay);
@@ -55,6 +55,25 @@ h2 {
 
 .description_card-icon>small {
     text-transform: capitalize;
+}
+
+.card-suntime{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 0.4rem;
+}
+.card-suntime.description_card-icon{
+    width: 100%;
+    display: row;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 12px;
 }
 
 @media screen and (max-width: 1024px) {
