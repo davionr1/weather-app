@@ -1,4 +1,4 @@
-import { FaArrowDown, FaArrowUp, FaWind, FaSun, FaCloudRain } from "react-icons/fa";
+import { FaArrowDown, FaArrowUp, FaWind, FaSun, FaCloudRain, FaMoon, FaClock, FaCalendarDay } from "react-icons/fa";
 
 import { WiHumidity } from "react-icons/wi";
 import { useState } from "react";
@@ -35,13 +35,15 @@ const WeatherGallery = (props) => {
                         </div>
                     </div>
                     <div className="section section_descriptions">
+
                         <div className="card">
-                            <div className="description_card_icon">
+                            <div className="description_card-icon">
                                 <FaCloudRain />
                                 <small>Precipitation Chance</small>
                             </div>
                             <h2>{weatherItem[0].currentConditions.precipprob}%</h2>
                         </div>
+
                         <div className="card">
                             <div className="description_card-icon">
                                 <FaWind />
@@ -50,6 +52,7 @@ const WeatherGallery = (props) => {
 
                             <h2> {weatherItem[0].currentConditions.windspeed}mph</h2>
                         </div>
+
                         <div className="card">
                             <div className="description_card-icon">
                                 <WiHumidity />
@@ -57,6 +60,20 @@ const WeatherGallery = (props) => {
                             </div>
 
                             <h2>{weatherItem[0].currentConditions.humidity}%</h2>
+                        </div>
+
+                        <div className="card-suntime">
+                            <div className="description_card-icon">
+                                <FaCalendarDay />
+                                <small>Date:</small>
+                            </div>
+                            <h2>{weatherItem[0]?.days[0].datetime}</h2>
+
+                            <div className="description_card-icon">
+                                <FaClock />
+                                <small>Time:</small>
+                            </div>
+                            <h2>{weatherItem[0].currentConditions.datetime}</h2>
                         </div>
 
                         <div className="card-suntime">
@@ -82,22 +99,16 @@ const WeatherGallery = (props) => {
                             </div>
                             <h2>{weatherItem[0].currentConditions.sunrise}</h2>
                             <div className="description_card-icon">
-                                <FaSun />
+                                <FaMoon />
                                 <small>sunset</small>
                             </div>
                             <h2>{weatherItem[0].currentConditions.sunset}</h2>
-                        </div>
-                        <div className="card">
-
                         </div>
                     </div>
                 </div>
             )
         }
-
-
     }
-
 
     return (
         <div
