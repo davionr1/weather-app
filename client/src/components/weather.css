@@ -1,14 +1,31 @@
 /* CSS for weather items */
+.section_temperature{
+    position: sticky;
+    width: auto;
+    padding: 2em;
+    margin:2em;
+}
+.temperature{
+    text-align: center;
+}
 
 .section_descriptions {
     display: grid;
     grid-template-columns: repeat(2, 2fr);
     gap: 2rem;
-    position: relative;
-    top: 100px;
+    position: sticky;
     color: white;
-    width: 55rem;
-    left: 28rem;
+    width: auto;
+    margin:1em;
+}
+
+.section_inputs{
+    position: unset;
+}
+
+.css-b62m3t-container{
+    width: 100%;
+    color: black;
 }
 
 h2 {

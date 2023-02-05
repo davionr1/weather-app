@@ -1,71 +1,69 @@
-import { FaArrowDown, FaArrowUp, FaWind } from "react-icons/fa";
-import { WiHumidity } from "react-icons/wi";
-import { useState } from "react";
 import './weather.css'
 import React from "react";
-const WeatherItem = (props) => {
+import { useState } from "react";
+import { useEffect } from "react";
+import WeatherGallery from './WeatherGallery';
 
-  return (
-    <div
-      className="App"
-      style={{
-        backgroundImage:
-          "url('https://rare-gallery.com/uploads/posts/124416-miui-8-rainy-weather-background-minimal-hd.png')",
-      }}
-    >
-      <div className="section section_temperature">
-        <div className="icon">
-          <h3>{props.data[0]['resolvedAddress']}</h3>
 
-          {/* <img
-            src="https://cdn-icons-png.flaticon.com/128/414/414927.png"
-            alt="Weather icon"
-          /> */}
-          <h1>{props.data[0].currentConditions.icon}</h1>
+function WeatherItem(props) {
 
-          <h3>{props.data[0]['description']}</h3>
-        </div>
-        <div className="temperature">
-          <h2>Temp</h2>
-          <h3>{props.data[0].currentConditions.temp}</h3>
-        </div>
-      </div>
-      <div className="section section_descriptions">
-        <div className="card">
-          <div className="description_card-icon">
-            <FaArrowDown />
-            <small>min temp</small>
-          </div>
+    let [locationWeather, setLocationWeather] = useState(false)
 
-          {/* <h2>{props.data[0].days[0].tempmin}</h2> */}
-        </div>
-        <div className="card">
-          <div className="description_card-icon">
-            <FaArrowUp />
-            <small>max temp</small>
-          </div>
+    console.log(props.handleLocation);
 
-          {/* <h2>{props.data[0].days[0].tempmax}</h2> */}
-        </div>
-        <div className="card">
-          <div className="description_card-icon">
-            <FaWind />
-            <small>wind speed</small>
-          </div>
+    function locationName() {
+        if (props.handleLocation.city_ascii !== []) {
+            const city =
+                (props.handleLocation.city_ascii + ' ' + props.handleLocation.admin_name + ' ' + props.handleLocation.iso3);
+            console.log("Location Name:", city);
+            return city;
+        }
+    }
+    let location = locationName()
 
-          <h2> {props.data[0]?.currentConditions.windspeed}</h2>
-        </div>
-        <div className="card">
-          <div className="description_card-icon">
-            <WiHumidity />
-            <small>humidity</small>
-          </div>
+    // const locationFunc = async () =>{
+    //     const result = await axios(name)
+    //     return result
+    // }
 
-          <h2>{props.data[0]?.currentConditions.humidity}</h2>
-        </div>
-      </div>
-    </div>
-  )
+    // let location = locationFunc()
+
+    const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
+    const WEATHER_HEAD = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/";
+    const WEATHER_MIDDLE = "?unitGroup=us&key=";
+
+    useEffect(() => {
+        if (location !== 'undefined') {
+            const fetchData = async () => {
+                const response = await fetch(
+                    WEATHER_HEAD + location + WEATHER_MIDDLE + API_KEY
+                );
+                const resData = await response.json();
+                if (resData) {
+                    // console.log(resData)
+                    setLocationWeather([resData]);
+                    console.log('data', locationWeather)
+                } else {
+                    console.log("ERROR");
+                }
+            };
+            fetchData();
+        }else{
+            console.log("No Location Name Selected")
+        }
+    }, [location])
+
+    console.log('Location Weather: ',locationWeather)
+    // console.log('Location weather length:', location.length)
+
+
+    return (
+        
+         <WeatherGallery handleSetLocation={locationWeather}/>
+         
+    )
 }
+
+
 export default WeatherItem;
 
