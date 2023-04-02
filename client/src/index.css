@@ -47,11 +47,15 @@
 
 
 .section_temperature {
-  display:flex;
-  align-items:center;
+  display: flex;
+  align-items: center;
   justify-content: space-around;
   background-color: var(--section-overlay);
   align-content: space-between;
+  position: relative;
+  width: 85rem;
+  left: 13rem;
+  top: 25px;
 }
 
 

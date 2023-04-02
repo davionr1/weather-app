@@ -51,6 +51,7 @@ function SearchWeather() {
                     <AsyncSelect
                         // cacheOptions
                         // defaultOptions
+                        placeholder={'Search for city...'}
                         value={selectedValue}
                         getOptionLabel={e => e.city_ascii + ', ' + e.admin_name + ', ' + e.iso3}
                         // getOptionValue={e =>e.id}

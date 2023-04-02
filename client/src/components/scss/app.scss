@@ -1,0 +1,22 @@
+// Scss Variables
+$primary-color: #398DCF;
+$secondary-color: #212529;
+$fonts: 'Bebas Neue',
+cursive;
+
+@mixin quick-fix {
+    padding-top: 1em;
+        text-align: center;
+        color: white;
+        font-family: $fonts;
+        font-size: 4em;
+        text-shadow: 3px 3px $secondary-color;
+}
+
+.title {
+    @include quick-fix;
+}
+
+.App {
+    background-color: $primary-color;
+}
