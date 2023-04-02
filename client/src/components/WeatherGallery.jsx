@@ -2,7 +2,7 @@ import { FaArrowDown, FaArrowUp, FaWind, FaSun, FaCloudRain, FaMoon, FaClock, Fa
 
 import { WiHumidity } from "react-icons/wi";
 import { useState } from "react";
-import './weather-app/scss/weather.scss'
+import './weather.css'
 import React from "react";
 const WeatherGallery = (props) => {
     function createWeatherItem() {

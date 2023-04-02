@@ -22,7 +22,7 @@ let csvStream = fastcsv
       port: 5432,
 
       idleTimeoutMillis: 0,
-      connectionTimeoutMillis: 0,
+      connectionTimeoutMillis: 0
     });
 
     const query =
@@ -32,7 +32,7 @@ let csvStream = fastcsv
       if (err) throw err;
 
       try {
-        csvData.forEach((row) => {
+        csvData.forEach(row => {
           client.query(query, row, (err, res) => {
             if (err) {
               console.log(err.stack);
@@ -41,13 +41,13 @@ let csvStream = fastcsv
             }
           });
         });
-      } catch (e) {
-        client.query("ROLLBACK");
-      } finally {
+      } catch(e){
+        client.query('ROLLBACK')
+      }
+      finally {
         done();
       }
     });
   });
 
 stream.pipe(csvStream);
-Footer;
